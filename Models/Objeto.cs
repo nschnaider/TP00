@@ -11,6 +11,6 @@ public static class Objeto
         if(string.IsNullOrEmpty(json))
         return default;
         else
-        return.JsonConvert.DeserializeObject<List<T>>(json);
+        return JsonConvert.DeserializeObject<List<T>>(json);
      }
 }

@@ -1,8 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Iniciar Sesion";
 }
 
-<div>
-    <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
-</div>
+<h2>Iniciar sesión</h2>
+
+<form method="post">
+    <label>Nombre de usuario</label>
+    <input type="text" name="nombre" required />
+
+    <label>Contraseña</label>
+    <input type="password" name="password" required />
+
+    <button type="submit">Entrar</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p>@ViewBag.Error</p>
+}
+
+<p>¿No tenés cuenta? <a href="/Home/Registrar">Registrate acá</a></p>

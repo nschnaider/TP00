@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Registrar";
+}
+
+<h2>Registrar nuevo integrante</h2>
+
+<form method="post">
+    <label>Nombre de usuario</label>
+    <input asp-for="Nombre" required />
+
+    <label>Contraseña</label>
+    <input asp-for="Password" type="password" required />
+
+    <label>Edad</label>
+    <input asp-for="Edad" type="number" required />
+
+    <label>Fecha de ingreso</label>
+    <input asp-for="Fecha" type="date" required />
+
+    <label>Tiempo en la organización</label>
+    <input asp-for="Tiempo" required />
+
+    <label>Dirección</label>
+    <input asp-for="Direccion" required />
+
+    <label>Teléfono</label>
+    <input asp-for="Telefono" required />
+
+    <button type="submit">Registrar</button>
+</form>
+
+<p>¿Ya tenés cuenta? <a href="/Home/Index">Volver al login</a></p>

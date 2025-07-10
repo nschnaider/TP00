@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Tu perfil";
+}
+<h2>Perfil de @ViewBag.i.Nombre</h2>
+
+<ul>
+    <li><b>Edad:</b> @ViewBag.i.Edad años</li>
+    <li><b>Fecha de ingreso:</b> @ViewBag.i.Fecha.ToShortDateString()</li>
+    <li><b>Tiempo en la organización:</b> @ViewBag.i.Tiempo</li>
+    <li><b>Dirección:</b> @ViewBag.i.Direccion</li>
+    <li><b>Teléfono:</b> @ViewBag.i.Telefono</li>
+</ul>
+
+<a href="/Home/Logout">Cerrar sesión</a>
