@@ -5,28 +5,22 @@
 <h2>Registrar nuevo integrante</h2>
 
 <form method="post">
-    <label>Nombre de usuario</label>
-    <input asp-for="Nombre" required />
+    
+    <input type="text" name="n" placeholder = "Nombre de usuario o Email">
 
-    <label>Contraseña</label>
-    <input asp-for="Password" type="password" required />
+    <input type="password" name="p" placeholder = "Contraseña" />
 
-    <label>Edad</label>
-    <input asp-for="Edad" type="number" required />
+    <input type="number" name="edad" placeholder = "Edad" />
 
-    <label>Fecha de ingreso</label>
-    <input asp-for="Fecha" type="date" required />
+    <input type="date" name="f" placeholder =  "Fecha de ingreso" />
 
-    <label>Tiempo en la organización</label>
-    <input asp-for="Tiempo" required />
+    <input type = "number" name="t" placeholder =  "Años en la organización" />
 
-    <label>Dirección</label>
-    <input asp-for="Direccion" required />
+    <input type = "text" name="d" placeholder = "Direccion" />
 
-    <label>Teléfono</label>
-    <input asp-for="Telefono" required />
+    <input type = "tel" name="tel" placeholder = "Telefono" />
 
-    <button type="submit">Registrar</button>
+    <input type="submit" Registrar>
 </form>
 
 <p>¿Ya tenés cuenta? <a href="/Home/Index">Volver al login</a></p>

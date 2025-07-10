@@ -28,12 +28,12 @@ namespace TP00.Controllers
             if (integrante != null)
             {
                 // Guardamos solo datos necesarios (sin ID)
-                HttpContext.Session.SetString("Nombre", integrante.Nombre);
-                HttpContext.Session.SetString("Direccion", integrante.Direccion);
-                HttpContext.Session.SetString("Telefono", integrante.Telefono);
-                HttpContext.Session.SetString("Tiempo", integrante.Tiempo);
-                HttpContext.Session.SetString("Edad", integrante.Edad.ToString());
-                HttpContext.Session.SetString("Fecha", integrante.Fecha.ToShortDateString());
+                HttpContext.Session.SetString("n", integrante.Nombre);
+                HttpContext.Session.SetString("d", integrante.Direccion);
+                HttpContext.Session.SetString("tel", integrante.Telefono);
+                HttpContext.Session.SetString("t", integrante.Tiempo);
+                HttpContext.Session.SetString("edad", integrante.Edad);
+                HttpContext.Session.SetString("f", integrante.Fecha.ToShortDateString());
 
                 return RedirectToAction("Perfil");
             }
@@ -43,26 +43,25 @@ namespace TP00.Controllers
         }
 
         // VISTA DE PERFIL (Solo si está logueado)
-           public IActionResult Perfil()
-        {
-            string nombre = HttpContext.Session.GetString("Nombre");
-            if (nombre == null){
-                return RedirectToAction("Index");
-            }
-            // Crear objeto con los datos guardados en Session
-            Integrante i = new Integrante
-            {
-                Nombre = nombre,
-                Direccion = HttpContext.Session.GetString("Direccion"),
-                Telefono = HttpContext.Session.GetString("Telefono"),
-                Tiempo = HttpContext.Session.GetString("Tiempo"),
-                Edad = HttpContext.Session.GetString("Edad"),
-                Fecha = DateTime.Parse(HttpContext.Session.GetString("Fecha") ?? DateTime.Now.ToString())
-            };
-            ViewBag.i= i;
+        public IActionResult Perfil()
+{
+        ViewBag.nombre = HttpContext.Session.GetString("n");
+    if (HttpContext.Session.GetString("n") == null)
+    {
+        return RedirectToAction("Index");
+    }
 
-            return View();
-        }
+    
+    ViewBag.direccion = HttpContext.Session.GetString("d");
+    ViewBag.telefono = HttpContext.Session.GetString("tel");
+    ViewBag.tiempo = HttpContext.Session.GetString("t");
+    ViewBag.edad = HttpContext.Session.GetString("edad");
+    ViewBag.fecha = HttpContext.Session.GetString("f");
+    
+
+    
+    return View();
+}
 
         // LOGOUT
         public IActionResult Logout()
@@ -78,10 +77,10 @@ namespace TP00.Controllers
         }
 
         [HttpPost]
-        public IActionResult Registrar(Integrante nuevo)
-        {
-            BD.Registrar(nuevo); // El ID se genera solo en la BD
-            return RedirectToAction("Index");
-        }
+        public IActionResult Registrar(string n, string p, string edad, DateTime f, string t, string d, string tel)
+{
+    BD.Registrar(new Integrante(n, p, edad, f, t, d, tel));
+    return RedirectToAction("Index");
+}
     }
 }

@@ -1,4 +1,4 @@
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using Dapper;
 public class BD
 {
@@ -19,9 +19,8 @@ public class BD
         nuevo.Password = Encriptador.Encriptar(nuevo.Password);
         using (SqlConnection db = new SqlConnection(connectionString))
         {
-            string insert = "INSERT INTO Integrantes (Nombre, Password, Edad, Fecha, Tiempo, Direccion, Telefono) " +
-                            "VALUES (@Nombre, @Password, @Edad, @Fecha, @Tiempo, @Direccion, @Telefono)";
-            db.Execute(insert, nuevo);
+            string insert = "INSERT INTO Integrantes (Nombre, Password, Edad, Fecha, Tiempo, Direccion, Telefono) VALUES (@pNombre, @pPassword, @pEdad, @pFecha, @pTiempo, @pDireccion, @pTelefono)";
+            db.Execute(insert, new { pNombre = nuevo.Nombre, pPassword = nuevo.Password, pEdad = nuevo.Edad, pFecha = nuevo.Fecha, pTiempo = nuevo.Tiempo, pDireccion = nuevo.Direccion, pTelefono = nuevo.Telefono });
         }
     }
 }
