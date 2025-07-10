@@ -1,26 +1,24 @@
 @{
     ViewData["Title"] = "Registrar";
 }
+<body class = "body2">
+   <section class="form-registro-title">
+    <h2 >Registrar nuevo integrante</h2>
+</section>
 
-<h2>Registrar nuevo integrante</h2>
-
-<form method="post">
-    
-    <input type="text" name="n" placeholder = "Nombre de usuario o Email">
-
-    <input type="password" name="p" placeholder = "Contraseña" />
-
-    <input type="number" name="edad" placeholder = "Edad" />
-
-    <input type="date" name="f" placeholder =  "Fecha de ingreso" />
-
-    <input type = "number" name="t" placeholder =  "Años en la organización" />
-
-    <input type = "text" name="d" placeholder = "Direccion" />
-
-    <input type = "tel" name="tel" placeholder = "Telefono" />
-
-    <input type="submit" Registrar>
+<section class="form-registro">
+<form method="post" >
+    <input type="text" name="n" placeholder="Nombre de usuario o Email" autocomplete="off" class="input-campo" />
+    <input type="password" name="p" placeholder="Contraseña" class="input-campo" />
+    <input type="number" name="edad" placeholder="Edad" autocomplete="off" class="input-campo" />
+    <input type="date" name="f" placeholder="Fecha de ingreso" autocomplete="off" class="input-campo" />
+    <input type="number" name="t" placeholder="Años en la organización" autocomplete="off" class="input-campo" />
+    <input type="text" name="d" placeholder="Dirección" autocomplete="off" class="input-campo" />
+    <input type="tel" name="tel" placeholder="Teléfono" autocomplete="off" class="input-campo" />
+    <input type="submit" value="Registrar" class="btn-registrar" />
 </form>
-
-<p>¿Ya tenés cuenta? <a href="/Home/Index">Volver al login</a></p>
+</section>
+<section class="texto-pie">
+   <p> ¿Ya tenés cuenta? <a href="/Home/Index">Volver al login</a></p>
+</section> 
+</body>

@@ -16,14 +16,8 @@ public class Integrante{
     public string Direccion {get; set;}
     [JsonProperty]
     public string Telefono {get; set;}
-    public Integrante(string nombre, string password, string edad, DateTime fecha, string tiempo, string direccion, string telefono){
-        this.Nombre = nombre;
-        this.Password = password;
-        this.Edad = edad;
-        this.Fecha = fecha;
-        this.Tiempo = tiempo;
-        this.Direccion = direccion;
-        this.Telefono = telefono;
+    public Integrante(){
+       
     }
         
     

@@ -21,3 +21,189 @@ footer {
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
+
+.body1 {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.login-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #45a049;
+}
+
+.login-container .error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.body2{
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.form-registro {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.form-registro-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+.input-campo {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.btn-registrar {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-registrar:hover {
+  background-color: #45a049;
+}
+
+
+.texto-pie {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.texto-pie a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.texto-pie a:hover {
+  text-decoration: underline;
+}
+
+.body3 {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+
+.perfil-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+
+.perfil-titulo {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.perfil-datos {
+  list-style: none;
+  padding: 0;
+}
+
+.perfil-dato {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.perfil-dato b {
+  color: #111;
+}
+
+
+.btn-logout {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #e53935;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-logout:hover {
+  background-color: #c62828;
+}

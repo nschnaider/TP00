@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP00.Models;
+using Newtonsoft.Json;
 
 namespace TP00.Controllers
 {
@@ -13,13 +14,13 @@ namespace TP00.Controllers
             _logger = logger;
         }
 
-        // VISTA DE INICIO (LOGIN)
+        
         public IActionResult Index()
         {
-            return View(); // Login.cshtml
+            return View(); 
         }
 
-        // POST: LOGIN
+        
         [HttpPost]
         public IActionResult Index(string nombre, string password)
         {
@@ -27,7 +28,7 @@ namespace TP00.Controllers
            
             if (integrante != null)
             {
-                // Guardamos solo datos necesarios (sin ID)
+              
                 HttpContext.Session.SetString("n", integrante.Nombre);
                 HttpContext.Session.SetString("d", integrante.Direccion);
                 HttpContext.Session.SetString("tel", integrante.Telefono);
@@ -42,7 +43,7 @@ namespace TP00.Controllers
             return View();
         }
 
-        // VISTA DE PERFIL (Solo si está logueado)
+        
         public IActionResult Perfil()
 {
         ViewBag.nombre = HttpContext.Session.GetString("n");
@@ -63,14 +64,14 @@ namespace TP00.Controllers
     return View();
 }
 
-        // LOGOUT
+       
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index");
         }
 
-        // VISTA DE REGISTRO
+        
         public IActionResult Registrar()
         {
             return View();
@@ -79,7 +80,7 @@ namespace TP00.Controllers
         [HttpPost]
         public IActionResult Registrar(string n, string p, string edad, DateTime f, string t, string d, string tel)
 {
-    BD.Registrar(new Integrante(n, p, edad, f, t, d, tel));
+    BD.Registrar(new Integrante{ Nombre = n, Password = p, Edad = edad,Fecha = f,Tiempo = t,Direccion= d,Telefono = tel});
     return RedirectToAction("Index");
 }
     }

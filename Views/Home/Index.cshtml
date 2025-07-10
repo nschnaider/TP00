@@ -1,22 +1,25 @@
 ﻿@{
     ViewData["Title"] = "Iniciar Sesion";
 }
+<body class = "body1">
+    <h2>Iniciar sesión</h2>
 
-<h2>Iniciar sesión</h2>
+<section class="login-container">
+    <form method="post">
+        <label>Nombre de usuario</label>
+        <input type="text" name="nombre" autocomplete="off" required />
 
-<form method="post">
-    <label>Nombre de usuario</label>
-    <input type="text" name="nombre" required />
+        <label>Contraseña</label>
+        <input type="password" name="password" required />
 
-    <label>Contraseña</label>
-    <input type="password" name="password" required />
+        <button type="submit">Entrar</button>
+    </form>
 
-    <button type="submit">Entrar</button>
-</form>
+    @if (ViewBag.Error != null)
+    {
+        <section class="error">@ViewBag.Error</section>
+    }
 
-@if (ViewBag.Error != null)
-{
-    <p>@ViewBag.Error</p>
-}
-
-<p>¿No tenés cuenta? <a href="/Home/Registrar">Registrate acá</a></p>
+    <p>¿No tenés cuenta? <a href="/Home/Registrar">Registrate acá</a></p>
+</section>
+</body>

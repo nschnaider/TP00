@@ -1,14 +1,21 @@
 @{
     ViewData["Title"] = "Tu perfil";
 }
-<h2>Perfil de @ViewBag.nombre</h2>
-
-<ul>
-    <li><b>Edad:</b> @ViewBag.edad años</li>
-    <li><b>Fecha de ingreso:</b> @ViewBag.fecha.ToShortDateString()</li>
-    <li><b>Tiempo en la organización:</b> @ViewBag.tiempo</li>
-    <li><b>Dirección:</b> @ViewBag.direccion</li>
-    <li><b>Teléfono:</b> @ViewBag.telefono</li>
-</ul>
-
-<a href="/Home/Logout">Cerrar sesión</a>
+<body class = "body3">
+    <div class="perfil-titulo">
+        <h2 >Perfil de @ViewBag.nombre</h2>
+    </div>
+   
+<section class="perfil-container">
+    <ul class="perfil-datos">
+        <li class="perfil-dato"><b>Edad:</b> @ViewBag.edad años</li>
+        <li class="perfil-dato"><b>Fecha de ingreso:</b> @ViewBag.fecha</li>
+        <li class="perfil-dato"><b>Tiempo en la organización:</b> @ViewBag.tiempo</li>
+        <li class="perfil-dato"><b>Dirección:</b> @ViewBag.direccion</li>
+        <li class="perfil-dato"><b>Teléfono:</b> @ViewBag.telefono</li>
+    </ul>
+<div class="btn-logout">
+    <a href="/Home/Logout" >Cerrar sesión</a>
+</div >
+</section>
+</body>
